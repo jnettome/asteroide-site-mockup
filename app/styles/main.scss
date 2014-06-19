@@ -28,9 +28,25 @@ $font-family-sans-serif: "Montserrat","Helvetica Neue", Helvetica, Arial, sans-s
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-base: $font-family-sans-serif;
 
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+$input-bg: rgba(255,255,255,0.1);
+$input-border: rgba(255,255,255,.4);
+$input-border-radius: 0;
+$input-border-focus: rgba(255,255,255,0.4);
+$input-color-placeholder: #ccc;
+$input-color: #fff;
+
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
+input,textarea {
+    text-transform: uppercase;
+}
 
 //== LOGO
 .logo {
@@ -75,7 +91,7 @@ $font-family-base: $font-family-sans-serif;
     opacity: 0;
 }
 
-.container-fluid {
+.container-fluid, .container {
     z-index: 2;
     position: relative;
 }
@@ -100,4 +116,31 @@ body {
 #nprogress .spinner-icon {
   border-top-color: #fff;
   border-left-color: #fff;
+}
+
+.about {
+    h3 {
+        text-transform: uppercase;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    h5 {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 500;
+        opacity: .8;
+        color: #fff;
+    }
+
+    iframe {
+        margin-top: 80px;
+        opacity: .7;
+    }
+
+    #content {
+        opacity: 0
+    }
+
+    padding-bottom: 80px;
 }
