@@ -89,3 +89,15 @@ body {
         padding-top: 20px;
     }
 }
+
+#nprogress .bar {
+  background: #fff;
+  }
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #fff, 0 0 5px #fff;
+}
+#nprogress .spinner-icon {
+  border-top-color: #fff;
+  border-left-color: #fff;
+}
