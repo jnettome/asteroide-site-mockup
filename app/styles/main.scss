@@ -144,3 +144,48 @@ body {
 
     padding-bottom: 80px;
 }
+
+.work {
+    #content {
+        opacity: 0
+    }
+
+    padding-bottom: 80px;
+
+    .work-post {
+        margin-bottom: 40px;
+        position: relative;
+
+        a {
+            img {
+                width: 100%;
+            }
+
+            .caption {
+                text-transform: uppercase;
+                text-align: center;
+
+                position: absolute;
+                top: 0;
+                left: 15px;
+
+                opacity: 0;
+
+                background: rgba(0,0,0,0.3);
+
+                h3 {
+                    position: absolute;
+                    width: 100%;
+                    font-size: 32px;
+                    color: #fff;
+
+                    small {
+                        display: block;
+                        color: rgba(255,255,255,.8);
+                    }
+                }
+            }
+
+        }
+    }
+}
