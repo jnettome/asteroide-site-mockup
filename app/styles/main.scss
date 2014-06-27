@@ -82,8 +82,26 @@ body {
 }
 
 #header {
+    .language-selector {
+        text-align: right;
+        margin-right: 15px;
+        color: #999;
+
+        a {
+            text-transform: uppercase;
+            color: #999;
+            &.active {
+                color: #ccc;
+            }
+
+            &:hover {
+                color: #ccc;
+            }
+        }
+    }
+
     nav {
-        padding-top: 20px;
+        padding-top: 10px;
     }
 }
 
