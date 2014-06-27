@@ -1,11 +1,15 @@
 'use strict';
 var _mainHeader = $('#header'),
+    _featuredBackground = $('.featured-background'),
     waitForAnimationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
     verticalCenterAlignment;
 
 _mainHeader.addClass('animated fadeInDown').one(waitForAnimationEnd, function () {
     $('#content').addClass('animated fadeInUp');
     $('.page-header').addClass('animated fadeInDown');
+
+    _featuredBackground.backstretch(_featuredBackground.data('image-src'), { centeredX: true, centeredY: false });
+    _featuredBackground.addClass('animated fadeInDown');
 });
 
 verticalCenterAlignment = function(_element) {
