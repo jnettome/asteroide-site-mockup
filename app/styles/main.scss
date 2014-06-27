@@ -1,39 +1,21 @@
+// Fonts & Typography
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-// //== Colors
-// //## Gray and brand colors for use across Bootstrap.
-// $gray-darker:            lighten(#000, 13.5%) !default; // #222
-// $gray-dark:              lighten(#000, 20%) !default;   // #333
-// $gray:                   lighten(#000, 33.5%) !default; // #555
-// $gray-light:             lighten(#000, 60%) !default;   // #999
-// $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
-// $brand-primary:         #428bca !default;
-// $brand-success:         #5cb85c !default;
-// $brand-info:            #5bc0de !default;
-// $brand-warning:         #f0ad4e !default;
-// $brand-danger:          #d9534f !default;
+$fa-font-path: "/bower_components/font-awesome/fonts/";
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
 
 //== Scaffolding
-//## Settings for some of the most global styles.
 $body-bg: #000;
 $text-color: #fff;
-//** Global textual link color.
 $link-color: #fff;
 $link-hover-color: darken($link-color, 15%);
+$nav-link-hover-bg: #000;
 
 //== Typography
-//## Font, line-height, and color for body text, headings, and more.
 $font-family-sans-serif: "Montserrat","Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-base: $font-family-sans-serif;
 
-
 //== Forms
-//
-//##
-
-//** `<input>` background color
 $input-bg: rgba(255,255,255,0.1);
 $input-border: rgba(255,255,255,.4);
 $input-border-radius: 0;
@@ -43,10 +25,8 @@ $input-color: #fff;
 
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
-input,textarea {
-    text-transform: uppercase;
-}
 
 //== LOGO
 .logo {
@@ -61,6 +41,7 @@ input,textarea {
     }
 }
 
+//== BACKGROUND
 .featured-background {
     background-size: cover;
     width: 100%;
@@ -106,23 +87,17 @@ body {
     }
 }
 
-#nprogress .bar {
-  background: #fff;
-  }
-
-#nprogress .peg {
-  box-shadow: 0 0 10px #fff, 0 0 5px #fff;
-}
-#nprogress .spinner-icon {
-  border-top-color: #fff;
-  border-left-color: #fff;
-}
-
 .about {
     h3 {
         text-transform: uppercase;
         font-size: 32px;
         font-weight: 700;
+    }
+
+    ul.list-inline {
+        a {
+            font-size: 32px;
+        }
     }
 
     h5 {
@@ -143,6 +118,10 @@ body {
     }
 
     padding-bottom: 80px;
+
+    input,textarea {
+        text-transform: uppercase;
+    }
 }
 
 .work {
