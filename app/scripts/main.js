@@ -1,6 +1,7 @@
 'use strict';
 var _featuredBackground = $('.featured-background'),
     _mainHeader = $('#header'),
+    _mainHeader = $('header'),
     _featuredText = $('h1.featured-text'),
     _featuredPlay = $('.featured-play'),
     _featuredLink = $('.featured-link'),

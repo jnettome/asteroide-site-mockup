@@ -10,6 +10,7 @@
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
+        <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -21,9 +22,8 @@
 
     </head>
     <body class="home">
-
+        <div class="featured-background" data-image-src="/images/featured-background-1.jpg"></div>
         <div class="container">
-
             <header id="header">
                 <div class="row">
                     <div class="col-md-4">
@@ -45,52 +45,29 @@
                 </div>
             </header>
 
-            <div id="boxgallery" class="boxgallery" data-effect="effect-3">
-                <div class="panel"><img src="./images/reel-2013.gif" alt="Image 3"/></div>
-                <div class="panel"><img src="./images/featured-background-1.jpg" alt="Image 1"/></div>
-                <div class="panel"><img src="./images/suvinil.gif" alt="Image 2"/></div>
-                <div class="panel"><img src="./images/featured-background-2.jpg" alt="Image 2"/></div>
-            </div>
+            <section id="content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="featured-text">
+                            <small>ASTEROIDE PRESENTS</small>
+                            REEL 2013
+                        </h1>
+                        <div class="featured-play">
+                            <a href="/work-reel.html" class="featured-link"><h2>SEE PROJECT</h2></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-            <header class="home-header">
-                <h1>
-                    click here right now
-                    <span>and watch our reel</span>
-                </h1>
-            </header>
-
-            <footer class="home-footer">
-                <address>Brigadeiro Franco 3342 - Centro - Curitiba | +55 41 34342926 | hey@asteroidefilmes.com.br</address>
-            </footer>
-        </div><!-- /container -->
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-
-        <script src="./scripts/classie.js"></script>
-        <script src="./scripts/boxesFx.js"></script>
-        <script>
-            var boxes = new BoxesFx( document.getElementById( 'boxgallery' ) );
-
-            var waitForAnimationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-            $('#header').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { });
-            $('.home-footer > address').addClass('animated fadeInUp').one(waitForAnimationEnd, function () { });
-            $('.home-header > h1').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { }).on('click', function(e) {
-                boxes._applyTransforms( boxes.panels[0], 'next' );
-
-                $('.home-header > h1').addClass('animated fadeOutUp').one(waitForAnimationEnd, function () {
-                    $('body').append('<iframe class="bigplayer" src="//player.vimeo.com/video/88757738?byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>').addClass('animated fadeIn');
-                    $('body').append('<div id="closebtn">fechar</div>');
-                });
-                $('.home-footer > address').addClass('animated fadeOutDown');
-                $('#header').addClass('animated fadeOutUp');
-            });
-        </script>
-
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -103,9 +80,12 @@
         </script>
 
         <!-- build:js scripts/plugins.js -->
+        <script src="../bower_components/jquery-backstretch/jquery.backstretch.js"></script>
+        <script src="../bower_components/nprogress/nprogress.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
 </html>
