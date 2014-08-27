@@ -142,7 +142,7 @@
             $('.current .home-header > h1').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { }).on('click', function(e) {
                 boxes._applyTransforms( boxes.panels[0], 'next' );
 
-                $('.home-header > h1').addClass('animated fadeOutUp').one(waitForAnimationEnd, function () {
+                $('.current .home-header > h1').addClass('animated fadeOutUp').one(waitForAnimationEnd, function () {
                     $('body').append('<iframe class="bigplayer" src="//player.vimeo.com/video/88757738?byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>').addClass('animated fadeIn');
                     $('body').append('<div id="closebtn">fechar</div>').on('click', function(e) {
                         $('body').find('.bigplayer').remove();
