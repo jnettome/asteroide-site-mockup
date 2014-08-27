@@ -17,6 +17,16 @@
     height: 100%;
 }
 
+.js .boxgallery:after {
+    // content: '';
+    // background: transparent url(../images/pattern.png) repeat top left;
+
+    // z-index: 200;
+    // position: absolute;
+    // width: 100%;
+    // height: 100%;
+}
+
 .panel {
     z-index: 0;
     -webkit-perspective: 1200px;

@@ -163,6 +163,9 @@
 			this.current = this.current > 0 ? this.current - 1 : this.panelsCount - 1;
 		}
 
+        // remove current title
+        $('.panel.current .home-header > h1').addClass('animated fadeOutUp');
+
 		// next panel to be shown
 		var nextPanel = this.panels[ this.current ];
 		// add class active to the next panel to trigger its animation
@@ -193,6 +196,14 @@
 				// remove class active
 				classie.remove( nextPanel, 'active' );
 				self.isAnimating = false;
+
+                // show current title
+                $('.panel.current .home-header > h1').addClass('animated fadeInDown');
+
+                // reset another animations
+                setTimeout(function() {
+                    $('.panel:not(.current) .home-header > h1').removeClass('animated fadeOutUp fadeInDown');
+                }, 3000);
 			};
 
 		if( support.transitions ) {

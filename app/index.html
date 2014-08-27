@@ -53,22 +53,71 @@
             </header>
 
             <div id="boxgallery" class="boxgallery" data-effect="effect-3">
-                <div class="panel"><img src="./images/reel-2013.gif" alt="Image 1"/></div>
-                <div class="panel"><img src="./images/territorio.gif" alt="Image 2"/></div>
-                <div class="panel"><img src="./images/fervendo.gif" alt="Image 3"/></div>
-                <div class="panel"><img src="./images/suvinil.gif" alt="Image 4"/></div>
-                <div class="panel"><img src="./images/folha.gif" alt="Image 5"/></div>
+                <div class="panel">
+                    <img src="./images/reel-2013.gif" alt="Image 1"/>
+                    <header class="home-header">
+                        <h1>
+                            <a href="#">
+                                asteroide reel 2013
+                                <span>click and watch</span><br>
+                                <i class="icomoon icon-play"></i>
+                            </a>
+                        </h1>
+                    </header>
+                </div>
+                <div class="panel">
+                    <img src="./images/territorio.gif" alt="Image 2"/>
+                    <header class="home-header">
+                        <h1>
+                            <a href="#">
+                                território <br>
+                                <span>o melhor inverno de todos os tempos</span>
+                                <span>click and watch</span><br>
+                                <i class="icomoon icon-play"></i>
+                            </a>
+                        </h1>
+                    </header>
+                </div>
+                <div class="panel">
+                    <img src="./images/fervendo.gif" alt="Image 3"/>
+                    <header class="home-header">
+                        <h1>
+                            <a href="#">
+                                sabonetes <br>
+                                <span>vem quente que eu estou fervendo</span>
+                                <span>click and watch</span><br>
+                                <i class="icomoon icon-play"></i>
+                            </a>
+                        </h1>
+                    </header>
+                </div>
+                <div class="panel">
+                    <img src="./images/suvinil.gif" alt="Image 4"/>
+                    <header class="home-header">
+                        <h1>
+                            <a href="#">
+                                suvinil<br>
+                                <span>app crie suvinil</span>
+                                <span>click and watch</span><br>
+                                <i class="icomoon icon-play"></i>
+                            </a>
+                        </h1>
+                    </header>
+                </div>
+                <div class="panel">
+                    <img src="./images/folha.gif" alt="Image 5"/>
+                    <header class="home-header">
+                        <h1>
+                            <a href="#">
+                                folha <br>
+                                <span>coleção elis regina</span>
+                                <span>click and watch</span><br>
+                                <i class="icomoon icon-play"></i>
+                            </a>
+                        </h1>
+                    </header>
+                </div>
             </div>
-
-            <header class="home-header">
-                <h1>
-                    <a href="#">
-                        asteroide reel 2013
-                        <span>click and watch</span><br>
-                        <i class="fa fa-play-circle-o"></i>
-                    </a>
-                </h1>
-            </header>
 
             <footer class="home-footer">
                 <address>Brigadeiro Franco 3342 - Centro - Curitiba | +55 41 34342926 | hey@asteroidefilmes.com.br</address>
@@ -90,7 +139,7 @@
             var waitForAnimationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
             $('#header').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { });
             $('.home-footer > address').addClass('animated fadeInUp').one(waitForAnimationEnd, function () { });
-            $('.home-header > h1').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { }).on('click', function(e) {
+            $('.current .home-header > h1').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { }).on('click', function(e) {
                 boxes._applyTransforms( boxes.panels[0], 'next' );
 
                 $('.home-header > h1').addClass('animated fadeOutUp').one(waitForAnimationEnd, function () {

@@ -28,6 +28,7 @@ $input-color: #fff;
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
+@import "icofonts.scss";
 @import "home-slider.scss";
 @import "about-slides.scss";
 
@@ -115,7 +116,7 @@ body.home {
 
     //== CAPTION
     .home-header {
-        z-index: 1000;
+        z-index: 1001;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -137,7 +138,7 @@ body.home {
             text-transform: uppercase;
 
             animation-duration: 2s;
-            animation-delay: 1s;
+            animation-delay: .5s;
             // animation-iteration-count: infinite;
 
             span {
@@ -148,7 +149,7 @@ body.home {
                 opacity: 0.7;
             }
 
-            .fa {
+            .fa,.icomoon  {
                 font-size: 110px;
                 margin-top: -34px;
                 color: rgba(255,255,255,.5);
@@ -157,7 +158,7 @@ body.home {
             a:hover {
                 text-decoration: none;
 
-                .fa {
+                .fa,.icomoon  {
                     color: rgba(255,255,255,1);
                     -webkit-transition: color .4s linear;
                     transition: color .4s linear;
