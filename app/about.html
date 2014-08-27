@@ -22,7 +22,14 @@
 
     </head>
     <body class="about">
-        <div class="featured-background" data-image-src="/images/office-darken.jpg"></div>
+        <ul class="cb-slideshow">
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+        </ul>
         <div class="container">
             <header id="header">
                 <div class="row">
@@ -31,7 +38,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="language-selector">
-                            <a href="#">br</a> / <a class="active" href="#">en</a>
+                            <a href="#">pt</a> / <a class="active" href="#">en</a>
                         </div>
                         <nav>
                             <ul class="nav nav-pills pull-right">
@@ -41,49 +48,47 @@
                                 <li><a href="/about.html">CONTACT</a></li>
                             </ul>
                         </nav>
+
+                        <nav class="social-media">
+                            <ul class="nav pull-right">
+                                <li><a href="#" class="facebook">like on <span>facebook</span></a></li>
+                                <li><a href="#" class="vimeo">watch on <span>vimeo</span></a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </header>
 
-            <section id="content">
+            <div id="content">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h3>We're in the business of making animation since 2001.</h3>
-                        <h5>Our talented team of artists have worked on projects in every style for
-                            every form of distribution.</h5>
+                    <div class="col-md-6 col-md-offset-3">
+                        <h1 class="text-center">SOBRE</h1>
 
-                        <h3>GET IN TOUCH</h3>
-                        <h5>+55 41 3434 2926</h5>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <p>Somos uma produtora com estrutura e know-how para pensar, criar e produzir filmes de qualidade astronômica.</p>
+
+                        <p>Com uma equipe completa, garantimos para cada cliente uma intensa e gratificante experiência, tanto no processo de produção quanto na entrega.</p>
+
+                        <p>Amamos nossa arte, e amamos que amem nossa arte. Para isso, nos empenhamos em uma busca incessante pelo novo e pelo belo.</p>
+
+                        <p>Há um universo de histórias e um infinito de imagens para contá-las.</p>
+
+                        <p>Conte conosco, e boa viagem.</p>
+
+                        <!-- <ul>
+                            <li>CRIAÇÃO: Desenvolvimento e tratamento de roteiros com personalidade inovadora para publicidade e cinema.</li>
+                            <li>PRODUÇÃO: Produção executiva e set com competência e agilidade.</li>
+                            <li>PÓS-PRODUÇÃO: Técnicas avançadas de finalização aliando tecnologia ao bom gosto.</li>
                         </ul>
-                    </div>
 
-                    <div class="col-md-4 col-md-offset-2">
-                        <h3 class="text-right">DROP US A LETTER</h3>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="exampleInputName" placeholder="Say your name">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="And tell us your email">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="5" placeholder="Hello guys..."></textarea>
-                            </div>
-
-                          <button type="submit" class="btn btn-default pull-right">SEND</button>
-                        </form>
+                        VÍDEO: REEL -->
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <iframe width="100%" height="250px" frameBorder="0" src="https://a.tiles.mapbox.com/v3/joaonettome.ii4cc4mg/attribution.html"></iframe>
-                    </div>
-                </div>
-            </section>
+            <footer class="about-footer">
+                <address>Brigadeiro Franco 3342 - Centro - Curitiba | +55 41 34342926 | hey@asteroidefilmes.com.br</address>
+            </footer>
+
         </div>
 
 
@@ -105,13 +110,28 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
+        <script>
+            var waitForAnimationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+            $('#header').addClass('animated fadeInDown');
+            $('.home-footer > address').addClass('animated fadeInUp');
+
+            var i=1;
+            setTimeout(function() {
+                $('#content h1, #content p').each(function(el, index) {
+                    var el = $(this);
+                    setTimeout(function() {
+                        el.addClass('animated fadeInDown');
+                    }, 250 * i);
+                    i++;
+                });
+            }, 1000);
+        </script>
+
         <!-- build:js scripts/plugins.js -->
-        <script src="../bower_components/jquery-backstretch/jquery.backstretch.js"></script>
-        <script src="../bower_components/nprogress/nprogress.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/about.js -->
-        <script src="scripts/about.js"></script>
         <!-- endbuild -->
 </body>
 </html>
