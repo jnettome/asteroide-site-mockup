@@ -249,6 +249,34 @@ body.about {
             margin-bottom: 50px;
             text-align: justify;
         }
+
+        .reel {
+
+            > a {
+                display: inline-block;
+                text-align: center;
+                border: 5px solid #fff;
+                border-radius: 25px;
+                padding: 25px 30px;
+                font-size: 24px;
+                width: 380px;
+
+                .fa {
+                    font-size: 64px;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: #fff;
+
+                    color: #000;
+                    -webkit-transition: color .4s linear;
+                    transition: color .4s linear;
+                    -webkit-transition: background-color .4s linear;
+                    transition: background-color .4s linear;
+                }
+            }
+        }
     }
 
 }
