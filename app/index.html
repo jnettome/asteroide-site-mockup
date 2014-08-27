@@ -41,21 +41,31 @@
                                 <li><a href="/about.html">CONTACT</a></li>
                             </ul>
                         </nav>
+
+                        <nav class="social-media">
+                            <ul class="nav pull-right">
+                                <li><a href="#" class="facebook">like on <span>facebook</span></a></li>
+                                <li><a href="#" class="vimeo">watch on <span>vimeo</span></a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </header>
 
             <div id="boxgallery" class="boxgallery" data-effect="effect-3">
                 <div class="panel"><img src="./images/reel-2013.gif" alt="Image 3"/></div>
-                <div class="panel"><img src="./images/featured-background-1.jpg" alt="Image 1"/></div>
+                <div class="panel"><img src="./images/featured-background-1.jpg" class="zoomin" alt="Image 1"/></div>
                 <div class="panel"><img src="./images/suvinil.gif" alt="Image 2"/></div>
-                <div class="panel"><img src="./images/featured-background-2.jpg" alt="Image 2"/></div>
+                <div class="panel"><img src="./images/featured-background-2.jpg" class="zoomin" alt="Image 2"/></div>
             </div>
 
             <header class="home-header">
                 <h1>
-                    click here right now
-                    <span>and watch our reel</span>
+                    <a href="#">
+                        asteroide reel 2013
+                        <span>click and watch</span><br>
+                        <i class="fa fa-play-circle-o"></i>
+                    </a>
                 </h1>
             </header>
 
@@ -84,7 +94,10 @@
 
                 $('.home-header > h1').addClass('animated fadeOutUp').one(waitForAnimationEnd, function () {
                     $('body').append('<iframe class="bigplayer" src="//player.vimeo.com/video/88757738?byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>').addClass('animated fadeIn');
-                    $('body').append('<div id="closebtn">fechar</div>');
+                    $('body').append('<div id="closebtn">fechar</div>').on('click', function(e) {
+                        $('body').find('.bigplayer').remove();
+                        boxes._navigate( 'prev' );
+                    });
                 });
                 $('.home-footer > address').addClass('animated fadeOutDown');
                 $('#header').addClass('animated fadeOutUp');

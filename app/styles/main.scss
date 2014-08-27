@@ -65,6 +65,33 @@ html, body, .container {
         padding-top: 10px;
     }
 
+    nav.social-media {
+        margin-top: 30px;
+        margin-right: 10px;
+
+        ul.nav {
+            li {
+                a {
+                    padding: 2px 0;
+                    margin-right: 5px;
+                    color: rgba(0,0,0,0);
+                    background-color: transparent;
+
+                    &:hover {
+                        &.facebook { color: rgba(59,89,152, 1); }
+                        &.vimeo { color: rgba(26,183,234,1); }
+
+                        -webkit-transition: color .4s linear;
+                        transition: color .4s linear;
+                    }
+
+                    &.facebook span { color: rgba(59,89,152, 1); }
+                    &.vimeo span { color: rgba(26,183,234,1); }
+                }
+            }
+        }
+    }
+
     .logo {
         display: block;
         @include text-hide();
@@ -120,26 +147,43 @@ body.home {
 
         padding: 1em;
         text-align: center;
-    }
 
-    .home-header h1 {
-        margin: 0;
-        font-weight: 200;
-        font-size: 4em;
-        line-height: 1;
-        text-transform: uppercase;
+        h1 {
+            margin: 0;
+            font-weight: 200;
+            font-size: 4em;
+            line-height: 1;
+            text-transform: uppercase;
 
-        animation-duration: 2s;
-        animation-delay: 1s;
-        // animation-iteration-count: infinite;
-    }
+            animation-duration: 2s;
+            animation-delay: 1s;
+            // animation-iteration-count: infinite;
 
-    .home-header h1 span {
-        display: block;
-        padding: 0.5em 0 0.6em 0.1em;
-        font-size: 40%;
-        line-height: 1.2;
-        opacity: 0.7;
+            span {
+                display: block;
+                padding: 0.5em 0 0.6em 0.1em;
+                font-size: 40%;
+                line-height: 1.2;
+                opacity: 0.7;
+            }
+
+            .fa {
+                font-size: 110px;
+                margin-top: -34px;
+                color: rgba(255,255,255,.5);
+            }
+
+            a:hover {
+                text-decoration: none;
+
+                .fa {
+                    color: rgba(255,255,255,1);
+                    -webkit-transition: color .4s linear;
+                    transition: color .4s linear;
+                }
+            }
+        }
+
     }
 
     .bigplayer {
@@ -153,12 +197,11 @@ body.home {
 
     #closebtn {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 60px;
+        right: 60px;
         color: #fff;
         z-index: 1001;
     }
-
 }
 
 
