@@ -265,12 +265,21 @@ body.about {
                 border: 5px solid #fff;
                 border-radius: 25px;
                 padding: 25px 30px;
-                font-size: 24px;
-                width: 380px;
-
-                .fa {
-                    font-size: 64px;
+                @media (min-width: $screen-sm-min) {
+                    font-size: 24px;
+                    width: 380px;
+                    .fa {
+                        font-size: 64px;
+                    }
                 }
+
+                font-size: 24px;
+                width: 180px;
+                .fa {
+                    font-size: 32px;
+                }
+
+
 
                 &:hover {
                     text-decoration: none;

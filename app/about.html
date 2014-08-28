@@ -10,7 +10,6 @@
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
-        <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -33,10 +32,10 @@
         <div class="container">
             <header id="header">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-xs-4 col-md-4 hidden-xs">
                         <a href="/"><h1 class="logo white">Asteroide Filmes</h1></a>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-xs-12 col-sm-8 col-md-8">
                         <div class="language-selector">
                             <a href="#">pt</a> / <a class="active" href="#">en</a>
                         </div>
@@ -44,15 +43,15 @@
                             <ul class="nav nav-pills pull-right">
                                 <li><a href="/">HOME</a></li>
                                 <li><a href="/about.html">ABOUT</a></li>
-                                <li><a href="/work.html">WORK</a></li>
+                                <li><a href="/about.html">WORK</a></li>
                                 <li><a href="/about.html">CONTACT</a></li>
                             </ul>
                         </nav>
 
                         <nav class="social-media">
                             <ul class="nav pull-right">
-                                <li><a href="#" class="facebook">like on <span>facebook</span></a></li>
-                                <li><a href="#" class="vimeo">watch on <span>vimeo</span></a></li>
+                                <li><a href="https://www.facebook.com/asteroidefilmes" class="facebook">like on <span>facebook</span></a></li>
+                                <li><a href="https://vimeo.com/asteroidefilmes" class="vimeo">watch on <span>vimeo</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -61,7 +60,7 @@
 
             <div id="content">
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
                         <h1 class="text-center">SOBRE</h1>
 
                         <p>Somos uma produtora com estrutura e know-how para pensar, criar e produzir filmes de qualidade astronômica.</p>
@@ -75,7 +74,7 @@
                         <p>Conte conosco, e boa viagem.</p>
 
                         <div class="reel text-center">
-                            <a href="#">
+                            <a href="https://vimeo.com/88757738" data-toggle="lightbox" data-remote="http://player.vimeo.com/video/88757738" data-type="vimeo" data-width="100%">
                                 ASSISTA NOSSO REEL<br>
                                 <i class="fa fa-play-circle-o"></i>
                             </a>
@@ -85,9 +84,7 @@
                             <li>CRIAÇÃO: Desenvolvimento e tratamento de roteiros com personalidade inovadora para publicidade e cinema.</li>
                             <li>PRODUÇÃO: Produção executiva e set com competência e agilidade.</li>
                             <li>PÓS-PRODUÇÃO: Técnicas avançadas de finalização aliando tecnologia ao bom gosto.</li>
-                        </ul>
-
-                        VÍDEO: REEL -->
+                        </ul> -->
                     </div>
                 </div>
             </div>
@@ -103,7 +100,8 @@
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="../bower_components/ekko-lightbox/dist/ekko-lightbox.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -133,6 +131,28 @@
                     i++;
                 });
             }, 1000);
+
+            $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+
+
+            $(document).on('shown.bs.modal', '.modal', function () {
+                var modal = $(this);
+                var buttonClose = $('<button type="button" class="modalMainClose" data-dismiss="modal" aria-hidden="true">×</button>');
+
+                modal.find('iframe').height($(window).innerHeight());
+                buttonClose.addClass('animated fadeInLeft');
+                window.scrollTo(0, 0);
+                buttonClose.appendTo($('body')).animate({ left: 0 }, 500, function() {
+                    $(this).css('background-color', 'rgba(255,255,255,.2)');
+                }).on('click', function () {
+                    modal.modal('hide');
+                    // $(this).animate({ left: -90 }, 300, function() { $(this).remove(); })
+                    $(this).addClass('animated fadeOutLeft');
+                });
+            });
         </script>
 
         <!-- build:js scripts/plugins.js -->
