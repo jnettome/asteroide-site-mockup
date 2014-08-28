@@ -77,9 +77,10 @@
 		this.panels.forEach( function( panel ) {
 			var img = panel.querySelector( 'img' ), imgReplacement = '';
 			for( var i = 0; i < self.panelsCount; ++i ) {
-				imgReplacement += '<div class="bg-tile"><div class="bg-img"><img src="' + img.src + '" /></div></div>'
+                imgReplacement += '<div class="bg-tile"><div class="bg-img"><img src="' + img.dataset.original + '" /></div></div>'
+				// imgReplacement += '<div class="bg-tile"><div class="bg-img"><img src="' + img.dataset.original + '" /></div></div>'
 			}
-			panel.removeChild( img );
+			// panel.removeChild( img );
 			panel.innerHTML = imgReplacement + panel.innerHTML;
 		} );
 		// add navigation element

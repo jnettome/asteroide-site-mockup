@@ -25,7 +25,6 @@ $input-color: #fff;
 
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
 @import "icofonts.scss";
@@ -34,6 +33,12 @@ $input-color: #fff;
 
 html, body, .container {
     height: 100%;
+}
+
+.lazyload {
+    position: absolute;
+    background-size: cover;
+    width: 100%;
 }
 
 //== HEADER
