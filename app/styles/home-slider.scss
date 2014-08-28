@@ -300,3 +300,92 @@
     border: 0;
     background: #000;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MODALS
+
+.ekko-lightbox {
+/* Maximize the main wrappers on the screen */
+/* Make the parent wrapper of the modal box a full-width block */
+/* Remove borders and effects on the content */
+/**
+* /!\ By using this feature, you force the header and footer to be placed
+* in an absolute position. You must handle by yourself the margin of the
+* content.
+*/
+}
+.ekko-lightbox .modal-dialog,
+.ekko-lightbox .modal-content {
+bottom: 0;
+left: 0;
+position: absolute;
+right: 0;
+top: 0;
+}
+.ekko-lightbox .modal-dialog {
+margin: 0;
+width: 100%;
+}
+.ekko-lightbox .modal-content {
+border: none;
+-moz-border-radius: 0;
+border-radius: 0;
+-webkit-box-shadow: inherit;
+-moz-box-shadow: inherit;
+-o-box-shadow: inherit;
+box-shadow: inherit;
+background-color: #000;
+}
+.ekko-lightbox {
+/* Remove the padding inside the body */
+}
+.ekko-lightbox .modal-body {
+padding: 0;
+}
+.ekko-lightbox .modal-header,
+.ekko-lightbox .modal-footer {
+left: 0;
+position: absolute;
+right: 0;
+display: none;
+}
+.ekko-lightbox .modal-header {
+top: 0;
+}
+.ekko-lightbox .modal-footer {
+bottom: 0;
+}
+.ekko-lightbox-container iframe {}
+
+.modalMainClose {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,1);
+    z-index: 10001;
+    color: #000;
+    font-size: 90px;
+    line-height: 100%;
+    border: 0;
+    -webkit-transition: background-color .4s linear;
+    transition: background-color .4s linear;
+}
+.modalMainClose:hover,.modalMainClose:active {
+    background-color: rgba(255,255,255,1)!important;
+}

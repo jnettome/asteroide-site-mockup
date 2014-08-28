@@ -9,9 +9,9 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
-        <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
-        <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" />
         <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="../bower_components/ekko-lightbox/dist/ekko-lightbox.css" />
+        <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -56,22 +56,22 @@
 
             <div id="boxgallery" class="boxgallery" data-effect="effect-3">
                 <div class="panel">
-                    <img src="./images/reel-2013.jpg" data-original="./images/reel-2013.gif" class="lazyload" />
+                    <img src="./images/home-featured/reel-2013.jpg" data-original="./images/home-featured/reel-2013.gif" class="lazyload" />
                     <header class="home-header">
                         <h1>
-                            <a href="#">
+                            <a href="https://vimeo.com/88757738" data-toggle="lightbox" data-remote="http://player.vimeo.com/video/88757738" data-type="vimeo" data-width="100%">
                                 asteroide reel 2013
-                                <span>click and watch</span><br>
+                                <span>click and watch</span>
                                 <i class="icomoon icon-play"></i>
                             </a>
                         </h1>
                     </header>
                 </div>
                 <div class="panel">
-                    <img src="./images/territorio.jpg"  data-original="./images/territorio.gif" class="lazyload" />
+                    <img src="./images/home-featured/territorio.jpg"  data-original="./images/home-featured/territorio.gif" class="lazyload" />
                     <header class="home-header">
                         <h1>
-                            <a href="#">
+                            <a href="https://vimeo.com/98355084" data-toggle="lightbox" data-remote="http://player.vimeo.com/video/98355084" data-type="vimeo" data-width="100%">
                                 território <br>
                                 <span>o melhor inverno de todos os tempos</span>
                                 <i class="icomoon icon-play"></i>
@@ -80,10 +80,10 @@
                     </header>
                 </div>
                 <div class="panel">
-                    <img src="./images/fervendo.jpg"  data-original="./images/fervendo.gif" class="lazyload" />
+                    <img src="./images/home-featured/fervendo.jpg"  data-original="./images/home-featured/fervendo.gif" class="lazyload" />
                     <header class="home-header">
                         <h1>
-                            <a href="#">
+                            <a href="https://vimeo.com/44351509" data-toggle="lightbox" data-remote="http://player.vimeo.com/video/44351509" data-type="vimeo" data-width="100%">
                                 sabonetes <br>
                                 <span>vem quente que eu estou fervendo</span>
                                 <i class="icomoon icon-play"></i>
@@ -92,10 +92,10 @@
                     </header>
                 </div>
                 <div class="panel">
-                    <img src="./images/suvinil.jpg"  data-original="./images/suvinil.gif" class="lazyload" />
+                    <img src="./images/home-featured/suvinil.jpg"  data-original="./images/home-featured/suvinil.gif" class="lazyload" />
                     <header class="home-header">
                         <h1>
-                            <a href="#">
+                            <a href="https://vimeo.com/78620277" data-toggle="lightbox" data-remote="http://player.vimeo.com/video/78620277" data-type="vimeo" data-width="100%">
                                 suvinil<br>
                                 <span>app crie suvinil</span>
                                 <i class="icomoon icon-play"></i>
@@ -104,10 +104,10 @@
                     </header>
                 </div>
                 <div class="panel">
-                    <img src="./images/folha.jpg"  data-original="./images/folha.gif" class="lazyload" />
+                    <img src="./images/home-featured/folha.jpg"  data-original="./images/home-featured/folha.gif" class="lazyload" />
                     <header class="home-header">
                         <h1>
-                            <a href="#">
+                            <a href="https://vimeo.com/95174588" data-toggle="lightbox" data-remote="http://player.vimeo.com/video/95174588" data-type="vimeo" data-width="100%">
                                 folha <br>
                                 <span>coleção elis regina</span>
                                 <i class="icomoon icon-play"></i>
@@ -126,6 +126,8 @@
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/jquery.lazyload/jquery.lazyload.min.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="../bower_components/ekko-lightbox/dist/ekko-lightbox.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -135,22 +137,31 @@
             var boxes = new BoxesFx( document.getElementById( 'boxgallery' ) );
 
             var waitForAnimationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-            $('#header').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { });
-            $('.home-footer > address').addClass('animated fadeInUp').one(waitForAnimationEnd, function () { });
-            $('.current .home-header > h1').addClass('animated fadeInDown').one(waitForAnimationEnd, function () { }).on('click', function(e) {
-                boxes._applyTransforms( boxes.panels[0], 'next' );
+            $('#header').addClass('animated fadeInDown');
+            $('.home-footer > address').addClass('animated fadeInUp');
+            $('.current .home-header > h1').addClass('animated fadeInDown');
 
-                $('.current .home-header > h1').addClass('animated fadeOutUp').one(waitForAnimationEnd, function () {
-                    $('body').append('<iframe class="bigplayer" src="//player.vimeo.com/video/88757738?byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>').addClass('animated fadeIn');
-                    $('body').append('<div id="closebtn">fechar</div>').on('click', function(e) {
-                        $('body').find('.bigplayer').remove();
-                        boxes._navigate( 'prev' );
-                    });
-                });
-                $('.home-footer > address').addClass('animated fadeOutDown');
-                $('#header').addClass('animated fadeOutUp');
-            });
             $('img.lazyload').lazyload({effect : "fadeOut"});
+
+            $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+
+            $(document).on('shown.bs.modal', '.modal', function () {
+                var modal = $(this);
+                var buttonClose = $('<button type="button" class="modalMainClose" data-dismiss="modal" aria-hidden="true">×</button>');
+
+                modal.find('iframe').height($(window).innerHeight());
+                buttonClose.addClass('animated fadeInLeft');
+                buttonClose.appendTo($('body')).animate({ left: 0 }, 500, function() {
+                    $(this).css('background-color', 'rgba(255,255,255,.2)');
+                }).on('click', function () {
+                    modal.modal('hide');
+                    // $(this).animate({ left: -90 }, 300, function() { $(this).remove(); })
+                    $(this).addClass('animated fadeOutLeft');
+                });
+            });
         </script>
 
 
